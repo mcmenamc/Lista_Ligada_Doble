@@ -67,9 +67,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Insertar.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Insertar.aspx.cs">
+      <DependentUpon>Insertar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Insertar.aspx.designer.cs">
+      <DependentUpon>Insertar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +88,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassEntidades\ClassEntidades.csproj">
+      <Project>{207cfa51-0c7f-412e-bc93-deb28c0356b8}</Project>
+      <Name>ClassEntidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLogicaNegocio\ClassLogicaNegocio.csproj">
+      <Project>{64d371a9-7ee5-4a4d-88b7-91aa35f5d45e}</Project>
+      <Name>ClassLogicaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

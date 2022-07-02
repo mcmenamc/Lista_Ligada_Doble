@@ -1,0 +1,11 @@
+C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\bin\Debug\ClassLogicaNegocio.dll
+C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\bin\Debug\ClassLogicaNegocio.pdb
+C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\bin\Debug\ClassDAL.dll
+C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\bin\Debug\ClassEntidades.dll
+C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\bin\Debug\ClassDAL.pdb
+C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\bin\Debug\ClassEntidades.pdb
+C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\obj\Debug\ClassLogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\obj\Debug\ClassLogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\obj\Debug\ClassLogicaNegocio.csproj.CopyComplete
+C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\obj\Debug\ClassLogicaNegocio.dll
+C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\obj\Debug\ClassLogicaNegocio.pdb

@@ -1,0 +1,9 @@
+C:\Users\mcmen\source\repos\remedial\ClassDAL\bin\Debug\ClassDAL.dll
+C:\Users\mcmen\source\repos\remedial\ClassDAL\bin\Debug\ClassDAL.pdb
+C:\Users\mcmen\source\repos\remedial\ClassDAL\bin\Debug\ClassEntidades.dll
+C:\Users\mcmen\source\repos\remedial\ClassDAL\bin\Debug\ClassEntidades.pdb
+C:\Users\mcmen\source\repos\remedial\ClassDAL\obj\Debug\ClassDAL.csproj.AssemblyReference.cache
+C:\Users\mcmen\source\repos\remedial\ClassDAL\obj\Debug\ClassDAL.csproj.CoreCompileInputs.cache
+C:\Users\mcmen\source\repos\remedial\ClassDAL\obj\Debug\ClassDAL.csproj.CopyComplete
+C:\Users\mcmen\source\repos\remedial\ClassDAL\obj\Debug\ClassDAL.dll
+C:\Users\mcmen\source\repos\remedial\ClassDAL\obj\Debug\ClassDAL.pdb
