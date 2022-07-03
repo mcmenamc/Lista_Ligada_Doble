@@ -163,35 +163,39 @@ namespace ClassDAL
             }
         }
         
-        public void Eliminar(string marca, string categoria)
+        public string Eliminar(string marca, string categoria)
         {
-            int pos = EncontraPosi(marca, categoria);
-            if (pos <= Cantidad())
-            {
-                if (pos == 1)
+           
+                int pos = EncuentraPosi(marca, categoria);
+                if (pos <= Cantidad())
                 {
-                    raiz = raiz.sig;
-                    if (raiz != null)
-                        raiz.ant = null;
+                    if (pos == 1)
+                    {
+                        raiz = raiz.sig;
+                        if (raiz != null)
+                            raiz.ant = null;
+                    }
+                    else
+                    {
+                        NodoLista reco = null;
+                        reco = raiz;
+                        for (int f = 1; f <= pos - 2; f++)
+                            reco = reco.sig;
+                        if (reco == null)
+                            return "No se encontro el nodo";
+                        NodoLista prox = reco.sig;
+                        prox = prox.sig;
+                        reco.sig = prox;
+                        if (prox != null)
+                            prox.ant = reco;
+                    }
                 }
-                else
-                {
-                    NodoLista reco;
-                    reco = raiz;
-                    for (int f = 1; f <= pos - 2; f++)
-                        reco = reco.sig;
-                    NodoLista prox = reco.sig;
-                    prox = prox.sig;
-                    reco.sig = prox;
-                    if (prox != null)
-                        prox.ant = reco;
-                }
-            }
+                return "Se elimino el nodo";
+            
         }
-        private int EncontraPosi(string marca, string categoria)
+        private int EncuentraPosi(string marca, string categoria)
         {
             int contador = 0;
-
             NodoLista reco = raiz;
             while (reco != null)
             {

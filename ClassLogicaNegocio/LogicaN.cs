@@ -34,9 +34,9 @@ namespace ClassLogicaNegocio
         public string EliminarImagen(string marca, string categoria, int posi) {
             return objDAL.EliminarImagen(marca, categoria, posi);
         }
-        public void EliminaNodo(string marca, string categoria)
+        public string EliminaNodo(string marca, string categoria)
         {
-            objDAL.Eliminar(marca, categoria);
+            return objDAL.Eliminar(marca, categoria);
         }
     }
 }

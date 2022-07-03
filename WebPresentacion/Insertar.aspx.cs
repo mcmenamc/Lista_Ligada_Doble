@@ -20,8 +20,6 @@ namespace WebPresentacion
                 bl = (LogicaN)Session["BL"];
                 countador = (int)Session["count"];
             }
-
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -105,17 +103,15 @@ namespace WebPresentacion
                 {
                     Stack<string> pila = new Stack<string>(4);
 
-                    //int imagenes = 0;
                     foreach (HttpPostedFile uploadedFile in FileUpload1.PostedFiles)
                     {
-                    
-                        string nombreArchivo = System.IO.Path.GetFileName(FileUpload1.FileName);
+                        Response.Write(uploadedFile);
+                        string nombreArchivo = System.IO.Path.GetFileName(uploadedFile.FileName);
                         string Ruta = Server.MapPath("imagenes") + "\\" + nombreArchivo;
                         try
                         {
                             pila.Push(nombreArchivo);
                             uploadedFile.SaveAs(Ruta);
-                            //imagenes++;
                         }
                         catch (Exception ex)
                         {
@@ -171,14 +167,22 @@ namespace WebPresentacion
             {
                 msg.Text = ex.Message;
             }
+            Mostrar();
         }
 
         protected void Button8_Click(object sender, EventArgs e)
         {
-            bl.EliminaNodo("m1", "c1");
-            countador--;
-            Session["count"] = countador;
-            Mostrar();
+            try
+            {
+                msg.Text = bl.EliminaNodo(txtCategoriaEN.Text, txtCategoriaEN.Text);
+                countador--;
+                Session["count"] = countador;
+                Mostrar();
+            }
+            catch(Exception ex)
+            {
+                msg.Text = ex.Message;
+            }
         }
     }
 }

@@ -110,8 +110,19 @@
         </div>
         <div>
             <h2>Eliminar Nodo</h2>
+            <asp:Label ID="Label15" runat="server" Text="Categoria:"></asp:Label>
+            <asp:TextBox ID="txtCategoriaEN" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Label ID="Label16" runat="server" Text="Marca:"></asp:Label>
+            <asp:TextBox ID="txtMarcaEN" runat="server"></asp:TextBox>
+            <br />
             <asp:Button ID="Button8" runat="server" Text="Eliminar Nodo" OnClick="Button8_Click" />
 
+        </div>
+        <div>
+            <h2>Graficador</h2>
+                <img width="1300" src="../Graficador.aspx"  />
         </div>
     </form>
 </body>
