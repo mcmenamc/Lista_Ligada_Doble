@@ -19,7 +19,7 @@ namespace ClassLogicaNegocio
         {
             return objDAL.Mostrar();
         }
-        public Catalogo BuscarCatalogo(string marca, string categoria)
+        public NodoLista BuscarCatalogo(string marca, string categoria)
         {
             return objDAL.BuscarCatalogo(marca, categoria);
         }
@@ -34,7 +34,7 @@ namespace ClassLogicaNegocio
         public string EliminarImagen(string marca, string categoria, int posi) {
             return objDAL.EliminarImagen(marca, categoria, posi);
         }
-        public string EliminaNodo(string marca, string categoria)
+        public Boolean EliminaNodo(string marca, string categoria)
         {
             return objDAL.Eliminar(marca, categoria);
         }

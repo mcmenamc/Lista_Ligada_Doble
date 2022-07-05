@@ -81,9 +81,9 @@ namespace WebPresentacion
         protected void Button3_Click(object sender, EventArgs e)
         {
             msg.Text = "";
-            Catalogo busca = bl.BuscarCatalogo(txtMarcaB.Text, txtCategoriaB.Text);
+            NodoLista busca = bl.BuscarCatalogo(txtMarcaB.Text, txtCategoriaB.Text);
             if (busca != null)
-                Label4.Text = busca.Mostrar();
+                Label4.Text = busca.info.Mostrar();
             else
                 Label4.Text = "";
                 msg.Text = "¡No se encontró los elementos!";
@@ -172,12 +172,21 @@ namespace WebPresentacion
 
         protected void Button8_Click(object sender, EventArgs e)
         {
+            Boolean mensaje;
             try
             {
-                msg.Text = bl.EliminaNodo(txtCategoriaEN.Text, txtCategoriaEN.Text);
-                countador--;
-                Session["count"] = countador;
-                Mostrar();
+                mensaje = bl.EliminaNodo(txtMarcaEN.Text, txtCategoriaEN.Text);
+                if (mensaje)
+                {
+                    msg.Text = "Se elimino el nodo";
+                    countador--;
+                    Session["count"] = countador;
+                    Mostrar();
+                }
+                else
+                {
+                    msg.Text = "El nodo no se encontro";
+                }
             }
             catch(Exception ex)
             {

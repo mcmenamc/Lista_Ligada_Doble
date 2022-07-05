@@ -37,9 +37,9 @@ namespace ClassDAL
                         {
                             reco = reco.sig;
                         }
-                        reco.sig = nuevo;
-                        nuevo.ant = reco;
-                        nuevo.sig = null;
+                            reco.sig = nuevo;
+                            nuevo.ant = reco;
+                            nuevo.sig = null;
                     }
                     else
                     {
@@ -55,6 +55,7 @@ namespace ClassDAL
                 }
             }
         }
+
         private int Cantidad()
         {
             int cant = 0;
@@ -81,15 +82,15 @@ namespace ClassDAL
         }
 
 
-        public Catalogo BuscarCatalogo(string marca, string categoria)
+        public NodoLista BuscarCatalogo(string marca, string categoria)
         {
             NodoLista reco = raiz;
-            Catalogo busca = null;
+            NodoLista busca = null;
             while (reco != null)
             {
                 if (reco.info.Marca == marca && reco.info.Categoria == categoria)
                 {
-                    busca = reco.info;
+                    busca = reco;
                     break;
                 }
                 reco = reco.sig;
@@ -99,7 +100,7 @@ namespace ClassDAL
 
         public string CambiarImagenes(Catalogo info)
         {
-            Catalogo catalogo = null;
+            NodoLista catalogo = null;
             catalogo = BuscarCatalogo(info.Marca, info.Categoria);
             if (catalogo == null)
             {
@@ -107,7 +108,7 @@ namespace ClassDAL
             }
             else
             {
-                catalogo.Imagenes = info.Imagenes;
+                catalogo.info.Imagenes = info.Imagenes;
                 return "Se cargaron las imagenes";
             }
         }
@@ -116,11 +117,11 @@ namespace ClassDAL
         {
             string[] mostras = null;
             Stack<string> busca = new Stack<string>();
-            Catalogo catalogo = null;
+            NodoLista catalogo = null;
             catalogo = BuscarCatalogo(marca, categoria);
             if (catalogo != null)
             {
-                busca = catalogo.Imagenes;
+                busca = catalogo.info.Imagenes;
                 mostras = new string[busca.Count];
                 int x = 0;
                 foreach (string img in busca)
@@ -135,7 +136,7 @@ namespace ClassDAL
 
         public string EliminarImagen(string marca, string categoria, int posi)
         {
-            Catalogo catalogo = null;
+            NodoLista catalogo = null;
             Stack<string> imgNuevas = new Stack<string>();
             catalogo = BuscarCatalogo(marca, categoria);
             if (catalogo == null)
@@ -145,9 +146,9 @@ namespace ClassDAL
             else
             {
                 int contador = 1;
-                if (posi > 0 && posi <= catalogo.Imagenes.Count)
+                if (posi > 0 && posi <= catalogo.info.Imagenes.Count)
                 {
-                    foreach (string img in catalogo.Imagenes)
+                    foreach (string img in catalogo.info.Imagenes)
                     {
                         if (contador != posi)
                         {
@@ -155,7 +156,7 @@ namespace ClassDAL
                         }
                         contador++;
                     }
-                    catalogo.Imagenes = imgNuevas;
+                    catalogo.info.Imagenes = imgNuevas;
                     return "Se modificaron las imagenes";
                 }
                 else
@@ -163,48 +164,50 @@ namespace ClassDAL
             }
         }
         
-        public string Eliminar(string marca, string categoria)
+        public Boolean Eliminar(string marca, string categoria)
         {
-           
-                int pos = EncuentraPosi(marca, categoria);
-                if (pos <= Cantidad())
+            NodoLista catalogo = null;
+            NodoLista antes = null;
+            Boolean mensaje;
+            catalogo = BuscarCatalogo(marca, categoria);
+            if (catalogo == null)
+            {
+                return false;
+            }
+            else
+            {
+                mensaje = true;
+                if (raiz.sig == null)
                 {
-                    if (pos == 1)
+                    raiz = null;
+                }
+                else
+                {
+                    if (catalogo.sig == null)
                     {
-                        raiz = raiz.sig;
-                        if (raiz != null)
-                            raiz.ant = null;
+                        antes = catalogo.ant;
+                        antes.sig = null;
                     }
                     else
                     {
-                        NodoLista reco = null;
-                        reco = raiz;
-                        for (int f = 1; f <= pos - 2; f++)
-                            reco = reco.sig;
-                        if (reco == null)
-                            return "No se encontro el nodo";
-                        NodoLista prox = reco.sig;
-                        prox = prox.sig;
-                        reco.sig = prox;
-                        if (prox != null)
-                            prox.ant = reco;
+                        if (catalogo.ant == null && catalogo.sig != null)
+                        {
+                            raiz = raiz.sig;
+                            raiz.ant = null;
+                        }
+                        else
+                        {
+                            if (catalogo.sig != null && catalogo.ant != null)
+                            {
+                                antes = catalogo.ant;
+                                antes.sig = catalogo.sig;
+                                catalogo.sig.ant = antes;
+                            }
+                        }
                     }
                 }
-                return "Se elimino el nodo";
-            
-        }
-        private int EncuentraPosi(string marca, string categoria)
-        {
-            int contador = 0;
-            NodoLista reco = raiz;
-            while (reco != null)
-            {
-                contador++;
-                if (reco.info.Marca == marca && reco.info.Categoria == categoria)
-                    return contador;
-                reco = reco.sig;
             }
-            return contador;
+            return mensaje;
         }
     }
 }
