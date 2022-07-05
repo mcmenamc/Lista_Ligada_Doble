@@ -9,3 +9,14 @@ C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\obj\Debug\ClassLogicaNeg
 C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\obj\Debug\ClassLogicaNegocio.csproj.CopyComplete
 C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\obj\Debug\ClassLogicaNegocio.dll
 C:\Users\mcmen\source\repos\remedial\ClassLogicaNegocio\obj\Debug\ClassLogicaNegocio.pdb
+C:\Users\julio\Documents\Lista_Ligada_Doble\ClassLogicaNegocio\bin\Debug\ClassLogicaNegocio.dll
+C:\Users\julio\Documents\Lista_Ligada_Doble\ClassLogicaNegocio\bin\Debug\ClassLogicaNegocio.pdb
+C:\Users\julio\Documents\Lista_Ligada_Doble\ClassLogicaNegocio\bin\Debug\ClassDAL.dll
+C:\Users\julio\Documents\Lista_Ligada_Doble\ClassLogicaNegocio\bin\Debug\ClassEntidades.dll
+C:\Users\julio\Documents\Lista_Ligada_Doble\ClassLogicaNegocio\bin\Debug\ClassDAL.pdb
+C:\Users\julio\Documents\Lista_Ligada_Doble\ClassLogicaNegocio\bin\Debug\ClassEntidades.pdb
+C:\Users\julio\Documents\Lista_Ligada_Doble\ClassLogicaNegocio\obj\Debug\ClassLogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\julio\Documents\Lista_Ligada_Doble\ClassLogicaNegocio\obj\Debug\ClassLogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\julio\Documents\Lista_Ligada_Doble\ClassLogicaNegocio\obj\Debug\ClassLogicaNegocio.csproj.CopyComplete
+C:\Users\julio\Documents\Lista_Ligada_Doble\ClassLogicaNegocio\obj\Debug\ClassLogicaNegocio.dll
+C:\Users\julio\Documents\Lista_Ligada_Doble\ClassLogicaNegocio\obj\Debug\ClassLogicaNegocio.pdb
